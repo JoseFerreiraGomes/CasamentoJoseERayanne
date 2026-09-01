@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>José &amp; Rayanne | 24 de Outubro de 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F4F1E6;
+    --olive-deep:#3F4A24;
+    --olive:#5B6B33;
+    --olive-soft:#8C9A63;
+    --olive-mist:#E4E4D2;
+    --ink:#2B2A22;
+    --gold:#A9812F;
+    --line:rgba(43,42,34,0.14);
+    --white:#FFFDF8;
+    --radius-s: 3px;
+    --maxw: 1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Karla', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    margin:0;
+    color:var(--olive-deep);
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  img{max-width:100%; display:block;}
+
+  /* ---------- top nav ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:40;
+    background:rgba(244,241,230,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-mark{font-family:'Fraunces', serif; font-size:1.25rem; letter-spacing:0.3px;}
+  .nav-links{display:flex; gap:28px; font-size:0.95rem;}
+  .nav-links a{text-decoration:none; color:var(--olive-deep); border-bottom:1px solid transparent; padding-bottom:2px; transition:border-color .2s;}
+  .nav-links a:hover{border-color:var(--gold);}
+  .cart-btn{
+    display:flex; align-items:center; gap:8px;
+    background:var(--olive-deep); color:var(--white);
+    border:none; padding:10px 18px; border-radius:var(--radius-s);
+    font-family:'Karla', sans-serif; font-size:0.9rem; font-weight:600;
+    cursor:pointer;
+  }
+  .cart-count{
+    background:var(--gold); color:var(--white);
+    border-radius:50%; width:20px; height:20px;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-size:0.72rem;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    display:grid; grid-template-columns: 1.1fr 0.9fr; align-items:center;
+    gap:40px; padding:88px 28px 96px; max-width:var(--maxw); margin:0 auto;
+  }
+  .hero-eyebrow{
+    font-size:0.95rem; color:var(--olive); margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:3.6rem; line-height:1.05; letter-spacing:-0.01em;
+  }
+  .hero h1 em{font-style:italic; color:var(--olive);}
+  .hero-date{
+    margin-top:22px; font-size:1.15rem; color:var(--ink);
+  }
+  .hero-date strong{color:var(--olive-deep);}
+  .hero-actions{margin-top:34px; display:flex; gap:16px; flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--olive-deep); color:var(--white); text-decoration:none;
+    padding:14px 26px; border-radius:var(--radius-s); font-weight:600; font-size:0.95rem;
+    display:inline-block; border:1px solid var(--olive-deep);
+  }
+  .btn-ghost{
+    color:var(--olive-deep); text-decoration:none;
+    padding:14px 26px; border-radius:var(--radius-s); font-weight:600; font-size:0.95rem;
+    display:inline-block; border:1px solid var(--olive-deep);
+  }
+  .hero-art{width:100%; height:auto;}
+
+  /* olive branch divider */
+  .branch-divider{ display:flex; justify-content:center; margin:0 0 8px; opacity:0.85;}
+  .branch-divider svg{width:180px; height:auto;}
+
+  section{padding:80px 0;}
+  .section-head{max-width:640px; margin:0 auto 48px; text-align:center;}
+  .section-head p.kicker{color:var(--olive); margin:0 0 10px; font-size:0.98rem;}
+  .section-head h2{font-size:2.2rem;}
+  .section-head .sub{margin-top:14px; color:#55543f; font-size:1.02rem;}
+
+  /* ---------- orientações / timeline ---------- */
+  .info{background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .timeline{max-width:760px; margin:0 auto; position:relative;}
+  .timeline::before{
+    content:""; position:absolute; left:86px; top:6px; bottom:6px; width:1px;
+    background:var(--line);
+  }
+  .t-item{display:grid; grid-template-columns:70px 1fr; gap:26px; padding:26px 0;}
+  .t-time{font-family:'Fraunces', serif; color:var(--olive-deep); font-size:1.1rem; text-align:right; position:relative;}
+  .t-time::after{
+    content:""; position:absolute; right:-32px; top:6px; width:9px; height:9px; border-radius:50%;
+    background:var(--gold);
+  }
+  .t-body h3{font-size:1.15rem; margin-bottom:6px;}
+  .t-body p{margin:0; color:#55543f;}
+
+  .info-grid{
+    max-width:760px; margin:56px auto 0; display:grid; grid-template-columns:1fr 1fr; gap:28px;
+  }
+  .info-card{border:1px solid var(--line); padding:24px; background:var(--ivory);}
+  .info-card h3{font-size:1.05rem; margin-bottom:8px;}
+  .info-card p{margin:0; color:#55543f; font-size:0.95rem;}
+
+  /* ---------- filtro de categorias ---------- */
+  .filter-tabs{
+    display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:36px;
+  }
+  .filter-tab{
+    background:transparent; border:1px solid var(--olive); color:var(--olive-deep);
+    padding:8px 18px; font-size:0.88rem; font-family:'Karla', sans-serif; font-weight:600;
+    cursor:pointer; border-radius:999px; transition:background .15s, color .15s;
+  }
+  .filter-tab:hover{background:var(--olive-mist);}
+  .filter-tab.active{background:var(--olive-deep); border-color:var(--olive-deep); color:var(--white);}
+
+  /* ---------- presentes ---------- */
+  .gifts-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:24px;
+  }
+  @media (max-width:1000px){
+    .gifts-grid{grid-template-columns:repeat(3, 1fr);}
+  }
+  .gift-card{
+    background:var(--white); border:1px solid var(--line);
+    display:flex; flex-direction:column;
+  }
+  .gift-photo{
+    aspect-ratio:4/3; width:100%;
+    background:linear-gradient(135deg, var(--olive-soft), var(--olive));
+    position:relative; overflow:hidden;
+  }
+  .gift-photo img{
+  width:100%; height:100%; object-fit:cover;
+  }
+  .gift-photo svg{position:absolute; inset:0; margin:auto; width:46%; opacity:0.9;}
+  .gift-body{padding:18px 20px 20px; display:flex; flex-direction:column; gap:10px; flex:1;}
+  .gift-body h3{font-size:1.05rem; line-height:1.3;}
+  .gift-price{color:var(--olive-deep); font-weight:700; font-size:1.05rem; font-family:'Fraunces', serif;}
+  .gift-desc{color:#65644c; font-size:0.9rem; margin:0; flex:1;}
+  .add-btn{
+    margin-top:6px; background:transparent; border:1px solid var(--olive-deep);
+    color:var(--olive-deep); padding:10px 16px; font-weight:600; font-size:0.9rem;
+    cursor:pointer; transition:background .15s, color .15s;
+  }
+  .add-btn:hover{background:var(--olive-deep); color:var(--white);}
+  .add-btn.added{background:var(--gold); border-color:var(--gold); color:var(--white);}
+
+  footer{
+    padding:50px 0 40px; text-align:center; color:#6b6a54; font-size:0.9rem;
+    border-top:1px solid var(--line);
+  }
+  footer .branch-divider{margin-bottom:20px;}
+
+  /* ---------- cart drawer ---------- */
+  .overlay{
+    position:fixed; inset:0; background:rgba(43,42,34,0.35);
+    opacity:0; pointer-events:none; transition:opacity .25s; z-index:60;
+  }
+  .overlay.open{opacity:1; pointer-events:auto;}
+  .drawer{
+    position:fixed; top:0; right:0; height:100%; width:min(420px, 92vw);
+    background:var(--white); z-index:70; transform:translateX(100%);
+    transition:transform .3s ease; display:flex; flex-direction:column;
+    box-shadow:-8px 0 30px rgba(0,0,0,0.12);
+  }
+  .drawer.open{transform:translateX(0);}
+  .drawer-head{
+    padding:22px 24px; border-bottom:1px solid var(--line);
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .drawer-head h3{font-size:1.3rem;}
+  .close-btn{background:none; border:none; font-size:1.4rem; cursor:pointer; color:var(--olive-deep); line-height:1;}
+  .drawer-body{padding:20px 24px; overflow-y:auto; flex:1;}
+  .cart-empty{color:#7a7960; text-align:center; margin-top:40px; font-size:0.95rem;}
+  .cart-item{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:14px 0; border-bottom:1px solid var(--line); gap:10px;
+  }
+  .cart-item-name{font-size:0.95rem;}
+  .cart-item-price{color:var(--olive-deep); font-weight:700; font-size:0.92rem; white-space:nowrap;}
+  .remove-link{background:none; border:none; color:#a06a4a; font-size:0.82rem; cursor:pointer; text-decoration:underline; padding:0;}
+  .drawer-foot{padding:20px 24px; border-top:1px solid var(--line);}
+  .cart-total{display:flex; justify-content:space-between; font-family:'Fraunces', serif; font-size:1.2rem; margin-bottom:16px;}
+  .checkout-btn{
+    width:100%; background:var(--olive-deep); color:var(--white); border:none;
+    padding:14px; font-weight:700; font-size:0.98rem; cursor:pointer;
+  }
+  .checkout-btn:disabled{opacity:0.4; cursor:not-allowed;}
+
+  /* ---------- checkout modal ---------- */
+  .modal{
+    position:fixed; inset:0; z-index:80; display:none;
+    align-items:center; justify-content:center; padding:20px;
+  }
+  .modal.open{display:flex;}
+  .modal-card{
+    background:var(--white); max-width:460px; width:100%;
+    padding:32px; position:relative; max-height:88vh; overflow-y:auto;
+  }
+  .modal-card h3{font-size:1.4rem; margin-bottom:6px;}
+  .modal-sub{color:#65644c; font-size:0.92rem; margin-bottom:22px;}
+  .pay-option{
+    border:1px solid var(--line); padding:16px; display:flex; gap:14px; align-items:flex-start;
+    margin-bottom:12px; cursor:pointer;
+  }
+  .pay-option.disabled{opacity:0.5; cursor:not-allowed;}
+  .pay-option input{margin-top:3px;}
+  .pay-option strong{display:block; font-size:0.98rem; margin-bottom:3px;}
+  .pay-option span{font-size:0.85rem; color:#65644c;}
+  .modal-total{
+    display:flex; justify-content:space-between; font-family:'Fraunces', serif;
+    font-size:1.15rem; margin:20px 0; padding-top:16px; border-top:1px solid var(--line);
+  }
+  .confirm-btn{
+    width:100%; background:var(--gold); color:var(--white); border:none;
+    padding:14px; font-weight:700; font-size:0.98rem; cursor:pointer;
+  }
+  .modal-note{font-size:0.8rem; color:#8a8968; margin-top:14px; line-height:1.5;}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr; padding-top:60px;}
+    .hero h1{font-size:2.5rem;}
+    .hero-art{max-width:280px; margin:0 auto;}
+    .info-grid{grid-template-columns:1fr;}
+    .gifts-grid{grid-template-columns:repeat(2,1fr);}
+    .nav-links{display:none;}
+  }
+  @media (max-width:520px){
+    .gifts-grid{grid-template-columns:1fr;}
+    .t-item{grid-template-columns:56px 1fr; gap:16px;}
+    .timeline::before{left:66px;}
+    .t-time::after{right:-26px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; scroll-behavior:auto !important;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-mark">José &amp; Rayanne</div>
+    <nav class="nav-links">
+      <a href="#orientacoes">Orientações</a>
+      <a href="#presentes">Presentes</a>
+    </nav>
+    <button class="cart-btn" id="openCart">
+      Carrinho <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <p class="hero-eyebrow">Vamos nos casar</p>
+    <h1>José <em>&amp;</em> Rayanne</h1>
+    <p class="hero-date">24 de Outubro de 2026 · <strong>Espaço Dolce</strong>, Itaituba – PA</p>
+    <div class="hero-actions">
+      <a href="#orientacoes" class="btn-primary">Ver orientações</a>
+      <a href="#presentes" class="btn-ghost">Lista de presentes</a>
+    </div>
+  </div>
+  <div>
+    <svg class="hero-art" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M160 300 C 160 220, 140 180, 100 140" stroke="#5B6B33" stroke-width="2.5" fill="none"/>
+      <path d="M160 300 C 160 220, 180 180, 220 140" stroke="#5B6B33" stroke-width="2.5" fill="none"/>
+      <g fill="#8C9A63">
+        <ellipse cx="100" cy="140" rx="16" ry="9" transform="rotate(-30 100 140)"/>
+        <ellipse cx="120" cy="175" rx="16" ry="9" transform="rotate(-15 120 175)"/>
+        <ellipse cx="90" cy="200" rx="16" ry="9" transform="rotate(-40 90 200)"/>
+        <ellipse cx="130" cy="230" rx="16" ry="9" transform="rotate(-10 130 230)"/>
+        <ellipse cx="220" cy="140" rx="16" ry="9" transform="rotate(30 220 140)"/>
+        <ellipse cx="200" cy="175" rx="16" ry="9" transform="rotate(15 200 175)"/>
+        <ellipse cx="230" cy="200" rx="16" ry="9" transform="rotate(40 230 200)"/>
+        <ellipse cx="190" cy="230" rx="16" ry="9" transform="rotate(10 190 230)"/>
+      </g>
+      <circle cx="160" cy="115" r="6" fill="#A9812F"/>
+      <path d="M154 115 a6 6 0 1 1 12 0 a6 6 0 1 1 -12 0" stroke="#A9812F" stroke-width="1.5" fill="none"/>
+    </svg>
+  </div>
+</section>
+
+<section class="info" id="orientacoes">
+  <div class="wrap">
+    <div class="branch-divider">
+      <svg viewBox="0 0 200 30" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="15" x2="200" y2="15" stroke="#8C9A63" stroke-width="1"/>
+        <circle cx="100" cy="15" r="4" fill="#A9812F"/>
+      </svg>
+    </div>
+    <div class="section-head">
+      <p class="kicker">O grande dia</p>
+      <h2>Orientações</h2>
+      <p class="sub">Tudo o que você precisa saber para curtir a nossa celebração com a gente.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-time">16h30</div>
+        <div class="t-body">
+          <h3>Cerimônia</h3>
+          <p>No jardim do Espaço Oliveiras. Pedimos que cheguem com 20 minutos de antecedência — a cerimônia começa pontualmente.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-time">18h00</div>
+        <div class="t-body">
+          <h3>Recepção e jantar</h3>
+          <p>Coquetel de boas-vindas seguido de jantar servido no salão principal.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-time">20h00</div>
+        <div class="t-body">
+          <h3>Festa</h3>
+          <p>Pista aberta até a meia-noite. Bebidas Alcoolicas liberadas a partir deste horário.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Traje</h3>
+        <p>Traje social. Fica um convite especial para tons terrosos e verde oliva, mas não é obrigatório.</p>
+      </div>
+      <div class="info-card">
+  <h3>Local</h3>
+  <p>
+    Espaço Dolce —
+    <a href="https://www.google.com/maps/place/Espa%C3%A7o+Dolce/@-4.2613151,-55.9795416,77m/data=!3m1!1e3!4m6!3m5!1s0x925fd900013ce1dd:0xe438d5d0f42fa338!8m2!3d-4.2614632!4d-55.9794221!16s%2Fg%2F11yvktb_8k?authuser=0&entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D"
+       target="_blank" rel="noopener"
+       style="color: var(--olive-deep); text-decoration: underline;">
+      ver no Google Maps
+    </a>. Estacionamento próprio e gratuito.
+  </p>
+</div>
+      <div class="info-card">
+        <h3>Crianças</h3>
+        <p>Amamos os pequenos, mas a festa será só para adultos, com exceção dos afilhados.</p>
+      </div>
+      <div class="info-card">
+        <h3>Confirmação</h3>
+        <p>Por favor, confirme presença até 20 de outubro pelo WhatsApp que consta no convite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="presentes">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Com carinho</p>
+      <h2>Lista de presentes</h2>
+      <p class="sub">Se quiser nos presentear, preparamos esta lista com todo carinho. Escolha um ou mais itens e finalize pelo carrinho.</p>
+    </div>
+
+    <div class="filter-tabs" id="filterTabs"></div>
+    <div class="gifts-grid" id="giftsGrid"></div>
+  </div>
+</section>
+
+<div class="branch-divider">
+  <svg viewBox="0 0 200 30" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="15" x2="200" y2="15" stroke="#8C9A63" stroke-width="1"/>
+    <circle cx="100" cy="15" r="4" fill="#A9812F"/>
+  </svg>
+</div>
+
+<footer>
+  <p>Com carinho, José &amp; Rayanne — 24 de Outubro de 2026</p>
+</footer>
+
+<!-- ===== Cart drawer ===== -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h3>Seu carrinho</h3>
+    <button class="close-btn" id="closeCart">&times;</button>
+  </div>
+  <div class="drawer-body" id="drawerBody">
+    <p class="cart-empty">Seu carrinho está vazio. Escolha um presente para começar.</p>
+  </div>
+  <div class="drawer-foot">
+    <div class="cart-total"><span>Total</span><span id="cartTotal">R$ 0</span></div>
+    <button class="checkout-btn" id="goCheckout" disabled>Finalizar compra</button>
+  </div>
+</aside>
+
+<!-- ===== Checkout modal ===== -->
+<div class="modal" id="checkoutModal">
+  <div class="modal-card">
+    <h3>Finalizar presente</h3>
+    <p class="modal-sub">Escolha como prefere pagar. O valor vai direto para os noivos.</p>
+
+    <label class="pay-option" for="payPix">
+      <input type="radio" name="payMethod" id="payPix" value="pix" checked>
+      <span>
+        <strong>Pix</strong>
+        <span>Sem taxas para você. Você receberá a chave Pix e o QR Code para pagar.</span>
+      </span>
+    </label>
+
+    <label class="pay-option disabled" for="payCard">
+      <input type="radio" name="payMethod" id="payCard" value="card" disabled>
+      <span>
+        <strong>Cartão de crédito (em breve)</strong>
+        <span>Parcelamento via Mercado Pago. Ainda estamos configurando essa opção.</span>
+      </span>
+    </label>
+
+    <div class="modal-total"><span>Total</span><span id="modalTotal">R$ 0</span></div>
+
+    <button class="confirm-btn" id="confirmOrder">Confirmar via WhatsApp</button>
+    <p class="modal-note">
+      Ao confirmar, vamos abrir o WhatsApp com um resumo do seu presente para combinarmos o pagamento via Pix.
+      Em breve, esta etapa vai acontecer automaticamente por aqui, com a chave Pix gerada na hora e opção de cartão parcelado.
+    </p>
+  </div>
+</div>
+
+<script>
+  // ============================================================
+  // CONFIGURAÇÃO — edite aqui
+  // ============================================================
+  const WHATSAPP_NUMBER = "5593992354749"; // troque pelo número dos noivos, formato 55DDDNÚMERO
+
+  // Lista de presentes — para trocar nome, preço ou categoria, edite aqui.
+  // "desc" é opcional (pode deixar ""). A foto é buscada automaticamente na
+  // pasta /fotos a partir do nome do item (veja slugify() logo abaixo).
+  const GIFTS = [
+    { id: 1, category: "Cozinha", name: "Kit de utensílios de cozinha", price: 60, desc: "Ferramentas para não ficar só olhando o outro cozinhar feito Marta olhando Jesus (Lucas 10:40)." },
+    { id: 2, category: "Cozinha", name: "Jogo de potes herméticos", price: 80, desc: "Para guardar o maná de cada dia sem ele estragar até amanhã (Êxodo 16:19-20)." },
+    { id: 3, category: "Cozinha", name: "Jogo de copos", price: 70, desc: "Encha o copo que transborda (Salmos 23:5) — de suco, de preferência." },
+    { id: 4, category: "Cozinha", name: "Jogo de taças", price: 90, desc: "Pra brindar como em Caná, só que sem precisar transformar água em vinho (João 2:1-11)." },
+    { id: 5, category: "Cozinha", name: "Jogo de xícaras", price: 80, desc: "Café da manhã de casal recém-casado também é um tipo de comunhão." },
+    { id: 6, category: "Cozinha", name: "Tábua de corte", price: 50, desc: "Separando o joio do trigo... ou só a cebola da cenoura mesmo (Mateus 13:30)." },
+    { id: 7, category: "Cozinha", name: "Jogo de facas", price: 100, desc: "Afiado como a Palavra (Hebreus 4:12), só que este é pra cortar frango." },
+    { id: 8, category: "Cozinha", name: "Jogo de talheres", price: 150, desc: "Pra comerem juntos todos os dias, como a igreja primitiva na fração do pão (Atos 2:46)." },
+    { id: 9, category: "Cozinha", name: "Jogo de pratos", price: 180, desc: "Pratos suficientes pra multiplicar o jantar quando a sogra aparece sem avisar." },
+    { id: 10, category: "Cozinha", name: "Jogo de travessas/refratários", price: 120, desc: "Pra servir o jantar em grande estilo, tipo festa de casamento em Caná." },
+    { id: 11, category: "Cozinha", name: "Frigideira antiaderente", price: 100, desc: "Nada gruda, nem a frigideira nem o compromisso de vocês dois." },
+    { id: 12, category: "Cozinha", name: "Panela de pressão", price: 150, desc: "Cozinha rápido, porque o feijão não precisa demorar 40 anos como no deserto." },
+    { id: 13, category: "Cozinha", name: "Chaleira elétrica", price: 100, desc: "Água fervendo na hora, sem precisar de sarça ardente (Êxodo 3:2)." },
+    { id: 14, category: "Cozinha", name: "Sanduicheira/Grill", price: 120, desc: "Pão quentinho, porque nem só de pão vive o homem, mas ajuda (Mateus 4:4)." },
+    { id: 15, category: "Cozinha", name: "Liquidificador", price: 100, desc: "Bate tudo e mistura, igual amor que une duas famílias em uma só (Gênesis 2:24)." },
+    { id: 16, category: "Cozinha", name: "Batedeira", price: 120, desc: "Pra bater o bolo do casamento numa boa, sem precisar de milagre." },
+    { id: 17, category: "Cozinha", name: "Mixer", price: 150, desc: "Junte, misture, sirva com amor — receita de casamento também." },
+    { id: 18, category: "Cozinha", name: "Cafeteira elétrica", price: 170, desc: "As misericórdias do Senhor se renovam a cada manhã (Lamentações 3:22-23) — o sono também precisa de ajuda." },
+    { id: 19, category: "Cozinha", name: "Panela elétrica de arroz", price: 180, desc: "Arroz sempre no ponto, sem drama, sem oração desesperada de última hora." },
+    { id: 20, category: "Cozinha", name: "Air Fryer 4L", price: 280, desc: "Comida sem óleo, vida sem culpa — quase um jejum, mas com batata frita." },
+    { id: 21, category: "Cozinha", name: "Jogo de panelas", price: 400, desc: "O básico da cozinha, tipo os dez mandamentos da vida a dois." },
+    { id: 22, category: "Cozinha", name: "Jogo de panelas premium", price: 700, desc: "Porque o casamento merece o melhor vinho — e o melhor jantar (João 2:10)." },
+    { id: 23, category: "Cozinha", name: "Forno elétrico", price: 400, desc: "Pra assar bolo de aniversário de casamento, ano após ano, com fé e fermento." },
+    { id: 24, category: "Cozinha", name: "Micro-ondas", price: 500, desc: "Esquentar comida em 2 minutos: o milagre mais usado da casa." },
+    { id: 25, category: "Quarto", name: "Jogo de cama casal", price: 150, desc: "Agora são um só corpo, então bem que precisam de um só lençol (Gênesis 2:24)." },
+    { id: 26, category: "Quarto", name: "Jogo de cama queen", price: 200, desc: "Espaço de sobra, porque amor não é apertado." },
+    { id: 27, category: "Quarto", name: "Edredom casal", price: 200, desc: "\"E, se dois dormirem juntos, aquecer-se-ão\" (Eclesiastes 4:11)." },
+    { id: 28, category: "Quarto", name: "Edredom queen", price: 250, desc: "Quentinho o suficiente pra brigar por cobertor com carinho." },
+    { id: 29, category: "Quarto", name: "Kit com 2 travesseiros", price: 120, desc: "Um pra cada, porque paz também se negocia à noite." },
+    { id: 30, category: "Quarto", name: "Protetor de colchão", price: 120, desc: "Proteção que não falha — contra suor e café da manhã na cama." },
+    { id: 31, category: "Quarto", name: "Manta para cama", price: 120, desc: "Pra aquecer as noites de conversa e planos (Jeremias 29:11)." },
+    { id: 32, category: "Quarto", name: "Jogo de fronhas", price: 70, desc: "Sonhos bons pedem fronha nova, tipo o sonho de José antes da confusão toda (Gênesis 37)." },
+    { id: 33, category: "Quarto", name: "Cobertor", price: 180, desc: "Aconchego garantido, sem precisar contar carneirinhos — ou ovelhas do Bom Pastor." },
+    { id: 34, category: "Quarto", name: "Kit de cabides", price: 70, desc: "Deus não é de confusão (1 Coríntios 14:33), nem o guarda-roupa deveria ser." },
+    { id: 35, category: "Quarto", name: "Organizadores de guarda-roupa", price: 100, desc: "Cada coisa em seu lugar, do jeito que gostamos de pensar que era o Éden." },
+    { id: 36, category: "Banheiro", name: "Jogo de toalhas", price: 150, desc: "Pra se enxugar depois do banho, sem precisar de milagre tipo travessia do Mar Vermelho." },
+    { id: 37, category: "Banheiro", name: "Jogo de toalhas premium", price: 250, desc: "Toalha felpuda de primeira, porque casamento também merece luxo básico." },
+    { id: 38, category: "Banheiro", name: "Kit toalhas de rosto", price: 80, desc: "Pra lavar o rosto e continuar bonito(a) como no dia do casamento." },
+    { id: 39, category: "Banheiro", name: "Jogo de tapetes", price: 120, desc: "Pra não escorregar na saída do banho — nem no relacionamento." },
+    { id: 40, category: "Banheiro", name: "Kit acessórios para banheiro", price: 100, desc: "Ordem no banheiro é meio caminho andado pra paz em casa." },
+    { id: 41, category: "Banheiro", name: "Espelho", price: 150, desc: "Pra se olharem e verem, com a ajuda de Deus, sempre o melhor um do outro." },
+    { id: 42, category: "Banheiro", name: "Cesto para roupa suja", price: 120, desc: "Onde a roupa suja vai — e não pro Instagram do casamento." },
+    { id: 43, category: "Banheiro", name: "Organizador de banheiro", price: 70, desc: "Cada creme e escova em seu devido lugar, com organização quase bíblica." },
+    { id: 44, category: "Limpeza e organização", name: "Ferro de passar", price: 100, desc: "Tira os vincos da roupa; os do casamento a gente resolve conversando, não com ferro quente." },
+    { id: 45, category: "Limpeza e organização", name: "Tábua de passar roupa", price: 150, desc: "Companheira do ferro, porque toda dupla precisa de uma boa base." },
+    { id: 46, category: "Limpeza e organização", name: "Aspirador de pó vertical", price: 320, desc: "Tira o pó, não a paciência — essa vocês vão precisar guardar." },
+    { id: 47, category: "Limpeza e organização", name: "Mop giratório", price: 150, desc: "Casa organizada, sinal de casamento tranquilo (teoria não comprovada, mas ajuda)." },
+    { id: 48, category: "Limpeza e organização", name: "Varal de chão", price: 150, desc: "Pra roupa secar em paz, sem depender de sol forte nem de milagre." },
+    { id: 49, category: "Limpeza e organização", name: "Lixeira para cozinha", price: 120, desc: "Todo mundo esquece de comprar, mas ninguém vive sem." },
+    { id: 50, category: "Limpeza e organização", name: "Lixeira para banheiro", price: 60, desc: "Discreta, mas essencial — igual paciência num casamento." },
+    { id: 51, category: "Limpeza e organização", name: "Kit de organizadores", price: 100, desc: "Pra vida ficar arrumada por dentro dos armários, já que por dentro do coração vocês já resolveram." },
+    { id: 52, category: "Sala e decoração", name: "Jogo de almofadas", price: 120, desc: "Conforto pro sofá e pras conversas de fim de noite." },
+    { id: 53, category: "Sala e decoração", name: "Manta para sofá", price: 120, desc: "Pra assistir filme grudadinho, tipo devia ser todo domingo à tarde." },
+    { id: 54, category: "Sala e decoração", name: "Tapete para sala", price: 300, desc: "A base que dá aconchego pra sala — todo bom casamento também precisa de base." },
+    { id: 55, category: "Sala e decoração", name: "Cortina para sala", price: 250, desc: "Deixa entrar luz na medida certa (Mateus 5:14), sem ofuscar a soneca de domingo." },
+    { id: 56, category: "Sala e decoração", name: "Luminária/abajur", price: 150, desc: "\"Não se acende uma candeia para colocá-la debaixo do alqueire\" (Mateus 5:15) — ilumina a sala, e o relacionamento também." },
+    { id: 57, category: "Sala e decoração", name: "Jogo de vasos decorativos", price: 180, desc: "Pra plantar flores e lembrar que tudo que é bom precisa ser regado com cuidado." },
+    { id: 58, category: "Presentes especiais", name: "Aspirador robô (cota)", price: 250, desc: "Cada cota é como um peixinho na multiplicação: sozinho é pouco, junto vira um presentão (Mateus 14:17-20)." },
+    { id: 59, category: "Presentes especiais", name: "Purificador de água (cota)", price: 175, desc: "Água pura pra casa nova, água viva pra vida a dois (João 4:14) — essa por conta de vocês mesmos." },
+    { id: 60, category: "Presentes especiais", name: "Smart TV 43\" (cota)", price: 280, desc: "Cada cota é um pãozinho, e no final vira uma tela enorme pra maratonar série." },
+    { id: 61, category: "Sala e decoração", name: "Sofá (cota)", price: 300, desc: "Cada cota constrói um pedacinho do sofá onde a casa vai receber visita com carinho — hospitalidade também é presente (Hebreus 13:2)." },
+  ];
+
+  // Gera o nome do arquivo de foto a partir do nome do item.
+  // Ex: "Jogo de panelas premium" -> fotos/jogo-de-panelas-premium.jpg
+  function slugify(str){
+    return str.toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+      .replace(/"/g,'')
+      .replace(/[^a-z0-9]+/g,'-')
+      .replace(/(^-|-$)/g,'');
+  }
+  GIFTS.forEach(g => { g.photo = `fotos/${slugify(g.name)}.jpg`; });
+
+  const money = (n) => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+  let cart = []; // array de gift ids
+  let activeCategory = 'Todos';
+
+  // ---------- abas de categoria ----------
+  const CATEGORIES = ['Todos', ...new Set(GIFTS.map(g => g.category))];
+  const tabsEl = document.getElementById('filterTabs');
+  CATEGORIES.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-tab' + (cat === 'Todos' ? ' active' : '');
+    btn.textContent = cat;
+    btn.dataset.cat = cat;
+    tabsEl.appendChild(btn);
+  });
+  tabsEl.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('filter-tab')) return;
+    activeCategory = e.target.dataset.cat;
+    tabsEl.querySelectorAll('.filter-tab').forEach(b => b.classList.toggle('active', b === e.target));
+    renderGifts();
+  });
+
+  // ---------- render gifts ----------
+  const grid = document.getElementById('giftsGrid');
+  function renderGifts(){
+    const filtered = activeCategory === 'Todos' ? GIFTS : GIFTS.filter(g => g.category === activeCategory);
+    grid.innerHTML = filtered.map(g => `
+      <div class="gift-card">
+        <div class="gift-photo"><img src="${g.photo}" alt="${g.name}" onerror="this.parentElement.classList.add('no-photo'); this.remove();"></div>
+        <div class="gift-body">
+          <h3>${g.name}</h3>
+          ${g.desc ? `<p class="gift-desc">${g.desc}</p>` : `<p class="gift-desc"></p>`}
+          <p class="gift-price">${money(g.price)}</p>
+          <button class="add-btn" data-id="${g.id}">Adicionar ao carrinho</button>
+        </div>
+      </div>`).join('');
+  }
+  renderGifts();
+
+  grid.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('add-btn')) return;
+    const id = Number(e.target.dataset.id);
+    cart.push(id);
+    e.target.textContent = "Adicionado ✓";
+    e.target.classList.add('added');
+    setTimeout(() => {
+      e.target.textContent = "Adicionar ao carrinho";
+      e.target.classList.remove('added');
+    }, 1200);
+    renderCart();
+  });
+
+  // ---------- cart drawer ----------
+  const overlay = document.getElementById('overlay');
+  const drawer = document.getElementById('drawer');
+  const drawerBody = document.getElementById('drawerBody');
+  const cartTotalEl = document.getElementById('cartTotal');
+  const cartCountEl = document.getElementById('cartCount');
+  const goCheckoutBtn = document.getElementById('goCheckout');
+
+  function openCart(){ overlay.classList.add('open'); drawer.classList.add('open'); }
+  function closeCart(){ overlay.classList.remove('open'); drawer.classList.remove('open'); }
+
+  document.getElementById('openCart').addEventListener('click', openCart);
+  document.getElementById('closeCart').addEventListener('click', closeCart);
+  overlay.addEventListener('click', () => { closeCart(); closeModal(); });
+
+  function renderCart(){
+    cartCountEl.textContent = cart.length;
+    if (cart.length === 0) {
+      drawerBody.innerHTML = `<p class="cart-empty">Seu carrinho está vazio. Escolha um presente para começar.</p>`;
+      goCheckoutBtn.disabled = true;
+    } else {
+      drawerBody.innerHTML = cart.map((id, idx) => {
+        const g = GIFTS.find(x => x.id === id);
+        return `<div class="cart-item">
+          <span class="cart-item-name">${g.name}</span>
+          <span class="cart-item-price">${money(g.price)}</span>
+          <button class="remove-link" data-idx="${idx}">remover</button>
+        </div>`;
+      }).join('');
+      goCheckoutBtn.disabled = false;
+    }
+    const total = cart.reduce((sum, id) => sum + GIFTS.find(x => x.id === id).price, 0);
+    cartTotalEl.textContent = money(total);
+    document.getElementById('modalTotal').textContent = money(total);
+  }
+
+  drawerBody.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('remove-link')) return;
+    const idx = Number(e.target.dataset.idx);
+    cart.splice(idx, 1);
+    renderCart();
+  });
+
+  // ---------- checkout modal ----------
+  const modal = document.getElementById('checkoutModal');
+  function openModal(){ modal.classList.add('open'); overlay.classList.add('open'); }
+  function closeModal(){ modal.classList.remove('open'); overlay.classList.remove('open'); }
+
+  goCheckoutBtn.addEventListener('click', () => { closeCart(); openModal(); });
+
+  document.getElementById('confirmOrder').addEventListener('click', () => {
+    const total = cart.reduce((sum, id) => sum + GIFTS.find(x => x.id === id).price, 0);
+    const items = cart.map(id => GIFTS.find(x => x.id === id).name).join(', ');
+    const msg = `Olá! Quero presentear o casal%0A%0APresentes: ${encodeURIComponent(items)}%0AValor total: ${encodeURIComponent(money(total))}%0A%0AAguardo a chave Pix para pagamento!`;
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
+    closeModal();
+  });
+
+  renderCart();
+
+  /*
+    ============================================================
+    PRÓXIMO PASSO — integração com Mercado Pago (Pix + cartão)
+    ============================================================
+    Quando você tiver a conta Mercado Pago pronta:
+    1) O botão "Confirmar via WhatsApp" pode ser trocado por uma
+       chamada à Checkout Pro, criando uma "preference" com os
+       itens do array `cart` no momento do clique.
+    2) Essa etapa precisa de uma função de backend (ex: Vercel/
+       Netlify Function) que guarde sua Access Token com segurança
+       e devolva a URL de pagamento (init_point) para redirecionar
+       o convidado.
+    3) O Mercado Pago então cuida do Pix dinâmico e do cartão
+       parcelado automaticamente, e o dinheiro cai na sua conta.
+    Posso te ajudar a montar essa função quando você tiver a conta
+    criada — é um passo isolado e não exige mexer no restante do site.
+  */
+</script>
+
+</body>
+</html>
