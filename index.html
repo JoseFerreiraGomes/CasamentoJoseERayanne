@@ -132,6 +132,18 @@
   .info-card{border:1px solid var(--line); padding:24px; background:var(--ivory);}
   .info-card h3{font-size:1.05rem; margin-bottom:8px;}
   .info-card p{margin:0; color:#55543f; font-size:0.95rem;}
+  .rsvp-btn{
+    margin-top:14px; background:var(--olive-deep); color:var(--white); border:none;
+    padding:9px 18px; font-weight:600; font-size:0.88rem; cursor:pointer;
+    transition:background .15s;
+  }
+  .rsvp-btn:hover{background:var(--olive);}
+  .map-btn{
+    display:inline-block; margin-top:14px; background:var(--olive-deep); color:var(--white);
+    text-decoration:none; padding:9px 18px; font-weight:600; font-size:0.88rem;
+    transition:background .15s;
+  }
+  .map-btn:hover{background:var(--olive);}
 
   /* ---------- filtro de categorias ---------- */
   .filter-tabs{
@@ -373,14 +385,11 @@
       </div>
       <div class="info-card">
   <h3>Local</h3>
-  <p>
-    Espaço Dolce —
-    <a href="https://www.google.com/maps/place/Espa%C3%A7o+Dolce/@-4.2613151,-55.9795416,77m/data=!3m1!1e3!4m6!3m5!1s0x925fd900013ce1dd:0xe438d5d0f42fa338!8m2!3d-4.2614632!4d-55.9794221!16s%2Fg%2F11yvktb_8k?authuser=0&entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D"
-       target="_blank" rel="noopener"
-       style="color: var(--olive-deep); text-decoration: underline;">
-      ver no Google Maps
-    </a>. Estacionamento próprio e gratuito.
-  </p>
+  <p>Espaço Dolce. Estacionamento próprio e gratuito.</p>
+  <a href="https://www.google.com/maps/place/Espa%C3%A7o+Dolce/@-4.2613151,-55.9795416,77m/data=!3m1!1e3!4m6!3m5!1s0x925fd900013ce1dd:0xe438d5d0f42fa338!8m2!3d-4.2614632!4d-55.9794221!16s%2Fg%2F11yvktb_8k?authuser=0&entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D"
+     target="_blank" rel="noopener" class="map-btn">
+    Ver localização
+  </a>
 </div>
       <div class="info-card">
         <h3>Crianças</h3>
@@ -388,7 +397,8 @@
       </div>
       <div class="info-card">
         <h3>Confirmação</h3>
-        <p>Por favor, confirme presença até 10 de outubro pelo WhatsApp que consta no convite.</p>
+        <p>Por favor, confirme presença até 10 de outubro pelo WhatsApp.</p>
+        <button class="rsvp-btn" id="rsvpBtn">Confirmar presença</button>
       </div>
     </div>
   </div>
@@ -469,7 +479,8 @@
   // ============================================================
   // CONFIGURAÇÃO — edite aqui
   // ============================================================
-  const WHATSAPP_NUMBER = "5593992354749"; // troque pelo número dos noivos, formato 55DDDNÚMERO
+  const WHATSAPP_PAGAMENTOS = "5593991754808"; // número que administra os pagamentos dos presentes
+  const WHATSAPP_CONFIRMACAO = "5593992354749"; // número que recebe as confirmações de presença — troque se for diferente
 
   // Lista de presentes — para trocar nome, preço ou categoria, edite aqui.
   // "desc" é opcional (pode deixar ""). A foto é buscada automaticamente na
@@ -679,11 +690,17 @@
       ? 'Quero pagar no cartão de crédito, aguardo o link/instruções para pagamento!'
       : 'Aguardo a chave Pix para pagamento!';
     const msg = `Olá! Quero presentear o casal %0A%0APresentes: ${encodeURIComponent(items)}%0AValor total: ${encodeURIComponent(money(total))}%0A%0A${encodeURIComponent(paymentLine)}`;
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
+    window.open(`https://wa.me/${WHATSAPP_PAGAMENTOS}?text=${msg}`, '_blank');
     closeModal();
   });
 
   renderCart();
+
+  // ---------- confirmação de presença ----------
+  document.getElementById('rsvpBtn').addEventListener('click', () => {
+    const msg = encodeURIComponent('Olá! Quero confirmar minha presença no casamento 🎉');
+    window.open(`https://wa.me/${WHATSAPP_CONFIRMACAO}?text=${msg}`, '_blank');
+  });
 
   /*
     ============================================================
