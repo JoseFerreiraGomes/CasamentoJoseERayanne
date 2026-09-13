@@ -164,7 +164,6 @@
   .gift-photo img{
   width:100%; height:100%; object-fit:cover;
   }
-  .gift-photo svg{position:absolute; inset:0; margin:auto; width:46%; opacity:0.9;}
   .gift-body{padding:18px 20px 20px; display:flex; flex-direction:column; gap:10px; flex:1;}
   .gift-body h3{font-size:1.05rem; line-height:1.3;}
   .gift-price{color:var(--olive-deep); font-weight:700; font-size:1.05rem; font-family:'Fraunces', serif;}
@@ -450,7 +449,7 @@
     </label>
 
     <label class="pay-option" for="payCard">
-      <input type="radio" name="payMethod" id="payCard" value="card" checked>
+      <input type="radio" name="payMethod" id="payCard" value="card">
       <span>
         <strong>Cartão de crédito</strong>
         <span>Parcelamento via Mercado Pago (Taxa da maquininha).</span>
@@ -593,7 +592,7 @@
       <div class="gift-card ${soldOut ? 'is-sold' : ''}">
         <div class="gift-photo">
           ${soldBadge}
-          <img src="${g.photo}" alt="${g.name}" onerror="this.parentElement.classList.add('no-photo'); this.remove();">
+          <img src="${g.photo}" alt="${g.name}" onerror="this.remove();">
         </div>
         <div class="gift-body">
           <h3>${g.name}</h3>
@@ -675,7 +674,11 @@
   document.getElementById('confirmOrder').addEventListener('click', () => {
     const total = cart.reduce((sum, id) => sum + GIFTS.find(x => x.id === id).price, 0);
     const items = cart.map(id => GIFTS.find(x => x.id === id).name).join(', ');
-    const msg = `Olá! Quero presentear o casal %0A%0APresentes: ${encodeURIComponent(items)}%0AValor total: ${encodeURIComponent(money(total))}%0A%0AAguardo a chave Pix para pagamento!`;
+    const selectedMethod = document.querySelector('input[name="payMethod"]:checked').value;
+    const paymentLine = selectedMethod === 'card'
+      ? 'Quero pagar no cartão de crédito, aguardo o link/instruções para pagamento!'
+      : 'Aguardo a chave Pix para pagamento!';
+    const msg = `Olá! Quero presentear o casal %0A%0APresentes: ${encodeURIComponent(items)}%0AValor total: ${encodeURIComponent(money(total))}%0A%0A${encodeURIComponent(paymentLine)}`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
     closeModal();
   });
