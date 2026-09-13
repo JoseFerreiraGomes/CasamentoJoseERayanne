@@ -449,11 +449,11 @@
       </span>
     </label>
 
-    <label class="pay-option disabled" for="payCard">
-      <input type="radio" name="payMethod" id="payCard" value="card" disabled>
+    <label class="pay-option" for="payCard">
+      <input type="radio" name="payMethod" id="payCard" value="card" checked>
       <span>
-        <strong>Cartão de crédito (em breve)</strong>
-        <span>Parcelamento via Mercado Pago. Ainda estamos configurando essa opção.</span>
+        <strong>Cartão de crédito</strong>
+        <span>Parcelamento via Mercado Pago (Taxa da maquininha).</span>
       </span>
     </label>
 
@@ -676,7 +676,7 @@
   document.getElementById('confirmOrder').addEventListener('click', () => {
     const total = cart.reduce((sum, id) => sum + GIFTS.find(x => x.id === id).price, 0);
     const items = cart.map(id => GIFTS.find(x => x.id === id).name).join(', ');
-    const msg = `Olá! Quero presentear vocês 🎁%0A%0APresentes: ${encodeURIComponent(items)}%0AValor total: ${encodeURIComponent(money(total))}%0A%0AAguardo a chave Pix para pagamento!`;
+    const msg = `Olá! Quero presentear o casal %0A%0APresentes: ${encodeURIComponent(items)}%0AValor total: ${encodeURIComponent(money(total))}%0A%0AAguardo a chave Pix para pagamento!`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
     closeModal();
   });
